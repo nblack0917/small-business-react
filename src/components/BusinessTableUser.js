@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Container, Button } from '@material-ui/core'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -38,9 +39,14 @@ const BusinessTableUser = (props) => {
                 <TableBody>
                     {props.busTable.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                         .map((bus, index) => (
-                        <TableRow key={bus.id + index}>
+                        <TableRow key={bus.id}>
                         <TableCell component="th" scope="row" align="left">
-                            {bus.name}
+                            <Link 
+                                to={`/detail/${bus.id}`} 
+                                style={{textDecoration: 'none', color: 'black'}}
+                            >
+                                {bus.name}
+                            </Link>
                         </TableCell>
                         <TableCell align="left">{bus.description}</TableCell>
                         <TableCell align="left">{bus.hours}</TableCell>

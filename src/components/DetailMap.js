@@ -1,21 +1,33 @@
 import React, { Component } from 'react'
+import Marker from './Marker'
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => (
-    <div style={{
-        color: 'white', 
-        background: 'grey',
-        padding: '15px 10px',
-        display: 'inline-flex',
-        textAlign: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '100%',
-        transform: 'translate(-50%, -50%)'
-    }}>
-        {text}
-    </div>
-);
+// const AnyReactComponent = ({ text }) => (
+//     <div style={{
+//         color: 'white', 
+//         background: 'blue',
+//         padding: '15px 10px',
+//         display: 'inline-flex',
+//         textAlign: 'center',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         borderRadius: '100%',
+//         transform: 'translate(-50%, -50%)'
+//     }}>
+//         {text}
+//     </div>
+// );
+// const AnyReactComponent = ({ text }) => (
+//     <div style={{
+//         fontSize: 20,
+//         textAlign: 'center',
+//         justifyContent: 'center',
+//         alignItems: 'center'
+//     }}>
+//         {text}
+//         <Marker />
+//     </div>
+// );
 
 class SimpleMap extends Component {
     constructor(props) {
@@ -40,11 +52,12 @@ class SimpleMap extends Component {
             defaultCenter={this.state.center}
             defaultZoom={this.state.zoom}
             >
-            <AnyReactComponent
+            {/* <AnyReactComponent
                 lat={this.state.business.lat}
                 lng={this.state.business.long}
                 text={this.state.business.name}
-            />
+            /> */}
+            <Marker  />
             </GoogleMapReact>
         </div>
         );

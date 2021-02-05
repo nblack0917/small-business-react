@@ -12,7 +12,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 const BusinessTable = (props) => {
     console.log(props.busTable)
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
     // const [coords, setCoords] = useState([lat="30.2672", long="97.7431"])
 
     const handleChangePage = (event, newPage) => {
@@ -20,7 +20,7 @@ const BusinessTable = (props) => {
     };
     
     const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 5));
+        setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
 
