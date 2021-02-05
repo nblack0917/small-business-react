@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Business 1",
+        "address": "123 Fake Street, Austin, TX 78616",
+        "hours": "9-5",
+        "description": "It's a place to go."
+    },
+    {
+        "id": 2,
+        "name": "Business 2",
+        "address": "345 Fake Street, Austin, TX 78616",
+        "hours": "9-5",
+        "description": "More than a pile of sticks."
+    },
+    {
+        "id": 3,
+        "name": "Business 3",
+        "address": "567 Fake Street, Austin, TX 78616",
+        "hours": "9-5",
+        "description": "Full of paradoxes."
+    },
+    {
+        "id": 4,
+        "name": "Business 4",
+        "address": "789 Fake Street, Austin, TX 78616",
+        "hours": "9-5",
+        "description": "No paradoxes but lot's of Schrodiger Cats. Possibly alive..or not...and paradoxes"
+    }
+]
