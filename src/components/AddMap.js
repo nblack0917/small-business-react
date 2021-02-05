@@ -10,8 +10,8 @@ class DetailMap extends Component {
             id: props.id,
             business: props.business,
             center: {
-                lat: props.business.lat,
-                lng: props.business.long
+                lat: 30.2672,
+                lng: -97.7431
             },
             zoom: 14
         }
@@ -19,7 +19,7 @@ class DetailMap extends Component {
 
     render() {
         return (
-        <div style={{ height: '400px', width: '100%' }}>
+        <div style={{ height: '400px', width: '48%' }}>
             <GoogleMapReact
             bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
             defaultCenter={this.state.center}

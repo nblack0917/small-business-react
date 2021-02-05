@@ -1,6 +1,6 @@
 import React from 'react'
 import DetailMap from './DetailMap'
-import { Container, Paper, Chip } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 
 
 const BusinessDetail = (props) => {

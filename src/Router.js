@@ -5,6 +5,7 @@ import Home from './containers/Home'
 import UserHome from './containers/UserHome'
 import Login from './components/Login'
 import BusinessDetail from './containers/BusinessDetail'
+import AddBusiness from './components/AddBusiness'
 
 const checkAuth = () => {
     const cookies = cookie.parse(document.cookie)
@@ -31,6 +32,7 @@ const Router = () => {
             <Route exact path="/" component={Home} />
             <ProtectedRoute exact path="/home" component={UserHome} />
             <Route path="/detail/:id" component={BusinessDetail} />
+            <Route path="/add" component={AddBusiness} />
         </Switch>
     )
 }
