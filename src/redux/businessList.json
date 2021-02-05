@@ -3,28 +3,63 @@
         "id": 1,
         "name": "Business 1",
         "address": "123 Fake Street, Austin, TX 78616",
-        "hours": "9-5",
-        "description": "It's a place to go."
+        "hours": "9AM - 5PM",
+        "description": "It's a place to go.",
+        "lat": 30.4583,
+        "long": -97.6355
     },
     {
         "id": 2,
         "name": "Business 2",
         "address": "345 Fake Street, Austin, TX 78616",
-        "hours": "9-5",
-        "description": "More than a pile of sticks."
+        "hours": "9AM - 5PM",
+        "description": "More than a pile of sticks.",
+        "lat": 30.2672,
+        "long": -97.7431
     },
     {
         "id": 3,
         "name": "Business 3",
         "address": "567 Fake Street, Austin, TX 78616",
-        "hours": "9-5",
-        "description": "Full of paradoxes."
+        "hours": "9AM - 5PM",
+        "description": "Full of paradoxes.",
+        "lat": 30.2672,
+        "long": -97.7431
     },
     {
         "id": 4,
         "name": "Business 4",
         "address": "789 Fake Street, Austin, TX 78616",
-        "hours": "9-5",
-        "description": "No paradoxes but lot's of Schrodiger Cats. Possibly alive..or not...and paradoxes"
+        "hours": "9AM - 5PM",
+        "description": "No paradoxes but lot's of Schrodiger Cats. Possibly alive..or not...and paradoxes",
+        "lat": 30.2672,
+        "long": -97.7431
+    },
+    {
+        "id": 5,
+        "name": "Business 5",
+        "address": "3245 Fake Street, Austin, TX 78616",
+        "hours": "9AM - 5PM",
+        "description": "We sell pizzas and baseball cards.",
+        "lat": 30.2672,
+        "long": -97.7431
+    },
+    {
+        "id": 6,
+        "name": "Business 6",
+        "address": "12345 Fake Street, Austin, TX 78616",
+        "hours": "9AM - 5PM",
+        "description": "We sell baseball cards and Pizzas.",
+        "lat": 30.2672,
+        "long": -97.7431
+    },
+    {
+        "id": 7,
+        "name": "Business 7",
+        "address": "2 Fake Street, Austin, TX 78616",
+        "hours": "9AM - 5PM",
+        "description": "Just an empty warehouse. Sometimes we sell Pizza",
+        "lat": 30.2672,
+        "long": -97.7431
     }
 ]

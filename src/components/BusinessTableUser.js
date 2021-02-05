@@ -19,7 +19,7 @@ const BusinessTableUser = (props) => {
     };
     
     const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
+        setRowsPerPage(parseInt(event.target.value, 5));
         setPage(0);
     };
 

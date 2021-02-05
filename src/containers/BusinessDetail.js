@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import UserHome from '../components/UserHome'
+import BusinessDetail from '../components/BusinessDetail'
 // import { fetchMakes, deleteMake } from '../redux/actions'
 
 const mapStateToProps = (state) => {
@@ -11,4 +11,4 @@ const mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps)(UserHome)
+export default connect(mapStateToProps)(BusinessDetail)

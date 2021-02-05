@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Container, Button } from '@material-ui/core'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,15 +11,16 @@ import TablePagination from '@material-ui/core/TablePagination';
 
 const BusinessTable = (props) => {
     console.log(props.busTable)
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+    // const [coords, setCoords] = useState([lat="30.2672", long="97.7431"])
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
     
     const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
+        setRowsPerPage(parseInt(event.target.value, 5));
         setPage(0);
     };
 
@@ -36,15 +38,19 @@ const BusinessTable = (props) => {
                 <TableBody>
                     {props.busTable.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                         .map((bus, index) => (
-                        <TableRow key={bus.id + index}>
-                        <TableCell component="th" scope="row" align="left">
-                            {bus.name}
-                        </TableCell>
-                        <TableCell align="left">{bus.description}</TableCell>
-                        <TableCell align="left">{bus.hours}</TableCell>
-                        <TableCell align="left">{bus.address}</TableCell>
-                        
-                        </TableRow>
+                            <TableRow key={bus.id}>
+                            <TableCell component="th" scope="row" align="left">
+                                <Link 
+                                    to={`/detail/${bus.id}`} 
+                                    style={{textDecoration: 'none', color: 'black'}}
+                                >
+                                    {bus.name}
+                                </Link>
+                            </TableCell>
+                            <TableCell align="left">{bus.description}</TableCell>
+                            <TableCell align="left">{bus.hours}</TableCell>
+                            <TableCell align="left">{bus.address}</TableCell>
+                            </TableRow>
                     ))}
                 </TableBody>
                 <TableFooter>

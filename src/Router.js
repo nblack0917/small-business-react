@@ -4,6 +4,7 @@ import cookie from 'cookie'
 import Home from './containers/Home'
 import UserHome from './containers/UserHome'
 import Login from './components/Login'
+import BusinessDetail from './containers/BusinessDetail'
 
 const checkAuth = () => {
     const cookies = cookie.parse(document.cookie)
@@ -29,6 +30,7 @@ const Router = () => {
             <Route path="/login" component={Login} />
             <Route exact path="/" component={Home} />
             <ProtectedRoute exact path="/home" component={UserHome} />
+            <Route path="/detail/:id" component={BusinessDetail} />
         </Switch>
     )
 }

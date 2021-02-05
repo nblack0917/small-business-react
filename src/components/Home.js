@@ -3,7 +3,7 @@ import BusinessTable from './BusinessTable'
 
 
 const Home = (props) => {
-    // console.log(props.business)
+    console.log(props.business)
         return (
             <BusinessTable busTable={props.business}/>
         )
