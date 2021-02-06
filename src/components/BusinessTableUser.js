@@ -9,11 +9,12 @@ import TableRow from '@material-ui/core/TableRow';
 import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';;
+// import BusinessTableUser from '../containers/BusinessUserTable'
 
 const BusinessTableUser = (props) => {
     console.log(props.busTable)
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10); 
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -52,7 +53,7 @@ const BusinessTableUser = (props) => {
                         <TableCell align="left">{bus.hours}</TableCell>
                         <TableCell align="left">{bus.address}</TableCell>
                         <TableCell align="center">
-                            <DeleteForeverIcon style={{color:'red'}} />
+                            <DeleteForeverIcon style={{color:'red', cursor: "pointer"}} onClick={() => props.deleteBusiness(index)}/>
                         </TableCell>
                         
                         </TableRow>

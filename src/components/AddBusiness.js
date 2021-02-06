@@ -25,6 +25,20 @@ const AddBusiness = () => {
         setDescription(e.target.value)
     }
 
+    const updateMap = () => {
+        console.log("getAddress", address)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const payload = {
+            name,
+            address,
+            hours,
+            description
+        }
+    }
+
     return (
         <div
             // maxWidth='lg'
@@ -32,7 +46,7 @@ const AddBusiness = () => {
             className="add-container"
         >
             <form className="add-form"
-                // onSubmit={}
+                onSubmit={handleSubmit}
             >
                 <TextField
                     required
@@ -47,6 +61,7 @@ const AddBusiness = () => {
                     id="address"
                     value={address}
                     onChange={handleAddressChange}
+                    onBlur={updateMap}
                     name="address"
                     label="Address"
                     type="text" />
