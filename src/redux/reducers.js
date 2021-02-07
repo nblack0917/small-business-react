@@ -7,6 +7,7 @@ const business = (state = [], action) => {
         case 'ADD_BUSINESS':
             return [ ...state, action.value ]
         case 'REMOVE_BUSINESS':
+            console.log(action.value)
             const businessList = [ ...state ]
             businessList.splice(action.value, 1)
             return businessList

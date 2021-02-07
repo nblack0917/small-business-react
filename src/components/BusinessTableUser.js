@@ -12,7 +12,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';;
 // import BusinessTableUser from '../containers/BusinessUserTable'
 
 const BusinessTableUser = (props) => {
-    console.log(props.busTable)
+    console.log("bus tatble prope: ", props.busList)
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10); 
 
@@ -38,7 +38,7 @@ const BusinessTableUser = (props) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {props.busTable.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    {props.busList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                         .map((bus, index) => (
                         <TableRow key={bus.id}>
                         <TableCell component="th" scope="row" align="left">
