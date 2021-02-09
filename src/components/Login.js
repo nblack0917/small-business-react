@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'
 import {
     TextField,
     Button,
@@ -6,16 +7,21 @@ import {
 } from '@material-ui/core'
 
 const Login = (props) => {
+    const history = useHistory();
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [hasName, setHasName] = useState(false)
     const [hasPass, setHasPass] = useState(false)
 
+    console.log(props.loggedIn)
+
     const login = (e) => {
         e.preventDefault()
         document.cookie = "loggedIn=true"
-        window.location.replace("/home")
-        console.log(props.loggedIn)
+        props.enableLogin();
+        // window.location.replace("/home")
+        // console.log(props.loggedIn)
+        history.push('/home')
     }
 
     const handleUserChange = (e) => {
@@ -40,8 +46,8 @@ const Login = (props) => {
             if(!password) {
                 setHasPass(!hasPass)
             }
-        }else if(userName && password) {
-            props.handleLogin(userName)
+        }else if(userName && password) {  
+            props.updateUserName(userName);
         }
     }
 

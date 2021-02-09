@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
-import Navbar from '../components/Navbar'
+import NavbarUser from '../components/NavnarUser'
 import { disableLogin } from '../redux/actions'
 
 const mapStateToProps = (state) => {
     return {
         loggedIn: state.loggedIn,
-        userName: state.userName
+        userName: state.userName[0]
     }
 }
 
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarUser)

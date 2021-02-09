@@ -5,7 +5,7 @@ import { Container } from '@material-ui/core';
 
 const BusinessDetail = (props) => {
     const id = props.match.params.id
-    console.log(id, props.business)
+    // console.log(id, props.business)
     const busList = props.business.find(bus => bus.id == id)
 
     return (
@@ -16,7 +16,6 @@ const BusinessDetail = (props) => {
                 <p>{busList.description}</p>
                 <DetailMap id={busList.id} business={busList}/>
         </Container>
-        // <h1>Hello</h1>
     )
 }
 

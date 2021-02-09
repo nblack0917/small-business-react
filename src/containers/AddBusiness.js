@@ -1,11 +1,20 @@
 import { connect } from 'react-redux'
 import AddBusiness from '../components/AddBusiness'
-import { addBusiness } from '../redux/actions'
+import { addBusiness, fetchCoords, resetCoords } from '../redux/actions'
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
     return {
-        addBusiness: (business) => dispatch(addBusiness(business))
+        business: state.business,
+        coords: state.coords
     }
 }
 
-export default connect(null, mapDispatchToProps)(AddBusiness)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addBusiness: (business) => dispatch(addBusiness(business)),
+        fetchCoords: (address) => dispatch(fetchCoords(address)),
+        resetCoords: () => dispatch(resetCoords())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddBusiness)

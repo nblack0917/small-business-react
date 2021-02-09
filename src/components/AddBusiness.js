@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import { Container, TextField, Button } from '@material-ui/core';
-import AddMap from './AddMap'
+import AddMap from '../containers/AddMap'
+import PinDropOutlinedIcon from '@material-ui/icons/PinDropOutlined';
+import { useHistory } from 'react-router-dom'
 
 
-const AddBusiness = () => {
+const AddBusiness = (props) => {
+    const history = useHistory();
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [hours, setHours] = useState("");
     const [description, setDescription] = useState("");
+    const [hasAddress, setHasAddress] = useState(false);
 
     const handleNameChange = (e) => {
         setName(e.target.value)
@@ -27,27 +31,38 @@ const AddBusiness = () => {
 
     const updateMap = () => {
         console.log("getAddress", address)
+        props.fetchCoords(address)
+        setHasAddress(true)
+    }
+    const updateView = () => {
+        console.log(props.coords.lat, props.coords.lng)
+        console.log("click")
+        setHasAddress(false)
+        
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const payload = {
+        const lastID = parseInt(props.business[props.business.length - 1].id);
+        const newBusiness = {
+            id: lastID + 1,
             name,
             address,
             hours,
-            description
+            description,
+            lat: props.coords.lat,
+            long: props.coords.lng
         }
+        console.log("New Business: ", newBusiness)
+        props.addBusiness(newBusiness);
+        setHasAddress(false)
+        props.resetCoords();
+        history.push('/')
     }
 
     return (
-        <div
-            // maxWidth='lg'
-            // style={{ dislplay: 'flex', justifyContent: 'space-between', marginTop: 40}}
-            className="add-container"
-        >
-            <form className="add-form"
-                onSubmit={handleSubmit}
-            >
+        <div className="add-container">
+            <form className="add-form" onSubmit={handleSubmit} >
                 <TextField
                     required
                     id="name"
@@ -65,6 +80,9 @@ const AddBusiness = () => {
                     name="address"
                     label="Address"
                     type="text" />
+                    <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer'}} onClick={updateView}>
+                        <PinDropOutlinedIcon fontSize="large"  color="primary" /> <h3 style={{ color: '#3949AB'}}>Map Locaiton</h3>
+                    </div>
                 <TextField
                     id="hours"
                     value={hours}
@@ -81,9 +99,10 @@ const AddBusiness = () => {
                     type="text" />
                 <Button variant="contained" color="primary" style={{width: "50%", marginTop: 15}} type="submit">Save</Button>
             </form>
-            <AddMap />
+            <AddMap lat={props.coords.lat} lng={props.coords.lng} hasAddress={hasAddress} />
         </div>
     )
+    
 }
 
 export default AddBusiness

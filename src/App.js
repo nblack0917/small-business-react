@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from './components/Navbar'
+// import Navigation from './containers/Navbar'
 import './App.css'
 import { BrowserRouter } from 'react-router-dom';
 import Router from './Router'
@@ -11,7 +11,7 @@ function App() {
   return (
     <Provider store={store}>
     <BrowserRouter>
-      <Navigation />
+      {/* <Navigation /> */}
       <Router />
     </BrowserRouter>
     </Provider>

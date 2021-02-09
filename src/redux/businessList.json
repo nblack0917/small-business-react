@@ -1,65 +1,65 @@
 [
     {
         "id": 1,
-        "name": "Business 1",
-        "address": "123 Fake Street, Austin, TX 78616",
-        "hours": "9AM - 5PM",
-        "description": "It's a place to go.",
-        "lat": 30.4583,
-        "long": -97.6355
+        "name": "Mothership Books and Games",
+        "address": "2121 W Parmer Ln #119, Austin, TX 78727",
+        "hours": "2Pm - 7PM",
+        "description": "Great board game selection. Good card selection",
+        "lat": 30.416351,
+        "long": -97.697097
     },
     {
         "id": 2,
-        "name": "Business 2",
-        "address": "345 Fake Street, Austin, TX 78616",
-        "hours": "9AM - 5PM",
-        "description": "More than a pile of sticks.",
-        "lat": 30.2672,
-        "long": -97.7431
+        "name": "Outlaw Moon Games and Toys",
+        "address": "5000 N Lamar Blvd, Austin, TX 78751",
+        "hours": "11AM - 7PM",
+        "description": "Great selection of toys and games. Vintage star wars,  RPGs like dnd and war hammer,  card games like magic and pokemon. Friendly staff.  I always check out the cool vintage toys.",
+        "lat": 30.318482,
+        "long": -97.731024
     },
     {
         "id": 3,
-        "name": "Business 3",
-        "address": "567 Fake Street, Austin, TX 78616",
+        "name": "Wonko's Toys and Games",
+        "address": "13776 US-183 #116, Austin, TX 78750",
         "hours": "9AM - 5PM",
-        "description": "Full of paradoxes.",
-        "lat": 30.2672,
-        "long": -97.7431
+        "description": "Wonko's is amazing for so many reasons.  Theybhave a great selection of games, old school toys (so many old school Star Figures and vehicles) and they have the best selection of Warhammer models in Austin!",
+        "lat": 30.475793,
+        "long": -97.800697
     },
     {
         "id": 4,
-        "name": "Business 4",
-        "address": "789 Fake Street, Austin, TX 78616",
-        "hours": "9AM - 5PM",
-        "description": "No paradoxes but lot's of Schrodiger Cats. Possibly alive..or not...and paradoxes",
-        "lat": 30.2672,
-        "long": -97.7431
+        "name": "Dragon's Lair Comics and Fantasy",
+        "address": "2438 W Anderson Ln B1, Austin, TX 78757",
+        "hours": "11AM - 8PM",
+        "description": "Excellent store with very friendly service.  I also appreciate how they treat veteran's, but they treat everyone great.  Just a good place to go and it has a wonderful gaming section along with all the comics.",
+        "lat": 30.356395,
+        "long": -97.731374
     },
     {
         "id": 5,
-        "name": "Business 5",
-        "address": "3245 Fake Street, Austin, TX 78616",
-        "hours": "9AM - 5PM",
-        "description": "We sell pizzas and baseball cards.",
-        "lat": 30.2672,
-        "long": -97.7431
+        "name": "The Gaming Goat Austin",
+        "address": "6929 Airport Blvd #134, Austin, TX 78752",
+        "hours": "1PM- 8PM",
+        "description": "I love this place! I always spend too much! All the staff I've met are amazing and knowledgeable. The ONLY thing that could make this place better would be if they could give me a how to play every game I buy there in 10 minutes or less!",
+        "lat": 30.336497,
+        "long": -97.718225
     },
     {
         "id": 6,
-        "name": "Business 6",
-        "address": "12345 Fake Street, Austin, TX 78616",
-        "hours": "9AM - 5PM",
-        "description": "We sell baseball cards and Pizzas.",
-        "lat": 30.2672,
-        "long": -97.7431
+        "name": "Tribe Comics and Games",
+        "address": "3005 S Lamar Blvd #d113, Austin, TX 78704",
+        "hours": "10AM - 7PM",
+        "description": "A great local comic book store with manga and a gaming area in the back. The new comic book wall on the right as you enter the store is long and impressive. It reminds me of a shop that I used to go to when I was in middle school.",
+        "lat": 30.242104,
+        "long": -97.784431
     },
     {
         "id": 7,
-        "name": "Business 7",
-        "address": "2 Fake Street, Austin, TX 78616",
+        "name": "Game Kastle Austin",
+        "address": "3407 Wells Branch Pkwy suite 800, Austin, TX 78728",
         "hours": "9AM - 5PM",
-        "description": "Just an empty warehouse. Sometimes we sell Pizza",
-        "lat": 30.2672,
-        "long": -97.7431
+        "description": "Game Kastle Austin is temporarily closed.",
+        "lat": 30.439916,
+        "long": -97.69614
     }
 ]

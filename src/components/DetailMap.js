@@ -7,17 +7,18 @@ class DetailMap extends Component {
         super(props);
 
         this.state = {
-            id: props.id,
-            business: props.business,
+            id: this.props.id,
+            business: this.props.business,
             center: {
-                lat: props.business.lat,
-                lng: props.business.long
+                lat: this.props.business.lat,
+                lng: this.props.business.long
             },
             zoom: 14
         }
     };
 
     render() {
+        console.log("Lat: ", this.props.business.lat, "Long: ", this.props.business.long)
         return (
         <div style={{ height: '400px', width: '100%' }}>
             <GoogleMapReact

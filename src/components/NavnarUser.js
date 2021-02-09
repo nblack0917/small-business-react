@@ -1,24 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
-
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import cookie from 'cookie'
 
 const logout = () => {
     // e.preventDefault()
-    document.cookie = "null;max-age=1"
+    document.cookie = "loggedIn=false;max-age=1"
     window.location.replace("/login")
     
-}
-
-const checkAuth = () => {
-    const cookies = cookie.parse(document.cookie)
-    // console.log("cookies", cookies)
-    return cookies["loggedIn"] ? true : false
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -44,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
     loginType: {
         fontSize: 14,
         color: '#808080',
-        position: 'relative',
-        top: -20,
-        left: 0,
+        position: 'fixed',
+        top: 66,
+        left: 25,
     }
 }));
 
@@ -57,7 +49,7 @@ const linkStyle = {
 
 const NavBar = (props) => {
     // const [loggedIn, setLoggedIn] =  useState(false);
-    // console.log("props loggedIn:", props.loggedIn)
+    console.log("props loggedIn:", props.loggedIn)
     const setLogin = () => {
         // console.log("Logged In: ", loggedIn)
         // setLoggedIn(false)
@@ -66,33 +58,6 @@ const NavBar = (props) => {
     }
     
     const classes = useStyles();
-    if(!checkAuth() && props.loggedIn === false) {
-        // const cookies = cookie.parse(document.cookie)
-        // console.log("Logged In: ", props.loggedIn)
-        // console.log("cookies: ", cookies["loggedIn"] ? true : false)
-        // setLoggedIn(true)
-        return (
-            <div className={classes.root}>
-            <AppBar position="static" className={classes.appBar}>
-                <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
-                        Austin Small Business
-                    </Typography>
-                    <Link to="/" style={{textDecoration: 'none'}}>
-                        <Button color="inherit" style={linkStyle}>Listings</Button>
-                    </Link>
-                    <Link to="/login" style={{textDecoration: 'none'}}>
-                        <Button color="inherit" style={linkStyle}>Login</Button>
-                    </Link>
-                </Toolbar>
-            </AppBar>
-            </div>
-        );
-    } else if(checkAuth()) {
-        // const cookies = cookie.parse(document.cookie)
-        // console.log("Logged In: ", props.loggedIn)
-        // console.log("UserName: ", props.userName)
-        // console.log("cookies: ", cookies["loggedIn"] ? true : false)
         return (
             <div className={classes.root}>
                 <AppBar position="static" className={classes.appBar}>
@@ -100,12 +65,10 @@ const NavBar = (props) => {
                         <Typography variant="h6" className={classes.title}>
                             Austin Small Business
                         </Typography>
-                        <Link to="/home" style={{textDecoration: 'none'}}>
+                        <Link to="/" style={{textDecoration: 'none'}}>
                             <Button color="inherit" style={linkStyle}>Listings</Button>
                         </Link>                        
-                        <Link to="/add" style={{textDecoration: 'none'}}>
-                            <Button color="inherit" style={linkStyle}>Add</Button>
-                        </Link>                        
+                        <Button color="inherit" style={linkStyle}>Add</Button>
                         <Button color="inherit" style={linkStyle} onClick={setLogin}>LOGOUT</Button>
                     </Toolbar>
                 </AppBar>
@@ -118,7 +81,6 @@ const NavBar = (props) => {
                 </div>
             </div>
         )
-    }
 }
 
 export default NavBar;

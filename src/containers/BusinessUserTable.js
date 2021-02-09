@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deleteBusiness = (index) => dispatch(deleteBusiness(index))
+        deleteBusiness: (index) => dispatch(deleteBusiness(index))
     }
 }
 
