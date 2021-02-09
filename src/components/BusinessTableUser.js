@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Button } from '@material-ui/core'
+import { Container } from '@material-ui/core'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,19 +9,19 @@ import TableRow from '@material-ui/core/TableRow';
 import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';;
-// import BusinessTableUser from '../containers/BusinessUserTable'
+
 
 const BusinessTableUser = (props) => {
-    console.log("bus table props: ", props.business)
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10); 
+    // console.log("bus table props: ", props.business)
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10); 
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
     
     const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 5));
+        setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
 
@@ -69,7 +69,6 @@ const BusinessTableUser = (props) => {
                         page={page}
                         onChangePage={handleChangePage}
                         onChangeRowsPerPage={handleChangeRowsPerPage}
-                        // ActionsComponent={TablePaginationActions}
                         />
                     </TableRow>
                 </TableFooter>

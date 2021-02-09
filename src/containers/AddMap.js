@@ -1,12 +1,14 @@
-import { connect } from 'react-redux'
-import AddMap from '../components/AddMap'
+//Container no longer in use
 
-const mapStateToProps = (state) => {
-    return {
-        business: state.business,
-        coords: state.coords
-    }
-}
+// import { connect } from 'react-redux'
+// import AddMap from '../components/AddMap'
+
+// const mapStateToProps = (state) => {
+//     return {
+//         business: state.business,
+//         coords: state.coords
+//     }
+// }
 
 
-export default connect(mapStateToProps)(AddMap)
+// export default connect(mapStateToProps)(AddMap)

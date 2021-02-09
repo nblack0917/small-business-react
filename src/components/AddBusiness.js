@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Container, TextField, Button } from '@material-ui/core';
-import AddMap from '../containers/AddMap'
+import { TextField, Button } from '@material-ui/core';
 import PinDropOutlinedIcon from '@material-ui/icons/PinDropOutlined';
 import { useHistory } from 'react-router-dom'
+import Marker from './Marker'
+import GoogleMapReact from 'google-map-react';
 
 
 const AddBusiness = (props) => {
@@ -11,7 +12,11 @@ const AddBusiness = (props) => {
     const [address, setAddress] = useState("");
     const [hours, setHours] = useState("");
     const [description, setDescription] = useState("");
-    const [hasAddress, setHasAddress] = useState(false);
+    // const [hasAddress, setHasAddress] = useState(false);
+    const [center, setCenter] = useState({
+        lat: 30.2672,
+        lng: -97.7431
+    });
 
     const handleNameChange = (e) => {
         setName(e.target.value)
@@ -30,14 +35,24 @@ const AddBusiness = (props) => {
     }
 
     const updateMap = () => {
-        console.log("getAddress", address)
-        props.fetchCoords(address)
-        setHasAddress(true)
+        if (address) {
+            // console.log("getAddress", address)
+            props.fetchCoords(address)
+            // setHasAddress(true)
+            setTimeout(setCenter({
+                lat: props.coords.lat,
+                lng: props.coords.lng
+            }), 1000)
+        }
     }
     const updateView = () => {
         console.log(props.coords.lat, props.coords.lng)
         console.log("click")
-        setHasAddress(false)
+        setCenter({
+            lat: props.coords.lat,
+            lng: props.coords.lng
+        })
+        // setHasAddress(false)
         
     }
 
@@ -55,9 +70,9 @@ const AddBusiness = (props) => {
         }
         console.log("New Business: ", newBusiness)
         props.addBusiness(newBusiness);
-        setHasAddress(false)
+        // setHasAddress(false)
         props.resetCoords();
-        history.push('/')
+        history.push('/home')
     }
 
     return (
@@ -99,7 +114,18 @@ const AddBusiness = (props) => {
                     type="text" />
                 <Button variant="contained" color="primary" style={{width: "50%", marginTop: 15}} type="submit">Save</Button>
             </form>
-            <AddMap lat={props.coords.lat} lng={props.coords.lng} hasAddress={hasAddress} />
+            {/* <AddMap lat={props.coords.lat} lng={props.coords.lng} hasAddress={hasAddress} /> */}
+            <div style={{ height: '400px', width: '48%' }}>
+            <div style={{ height: '400px', width: '48%' }}>
+                    <GoogleMapReact
+                    bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
+                    center={center}
+                    zoom={14}
+                    >
+                    <Marker  />
+                    </GoogleMapReact>
+                </div>
+            </div>
         </div>
     )
     

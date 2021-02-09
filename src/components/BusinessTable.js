@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Button } from '@material-ui/core'
+import { Container} from '@material-ui/core'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,10 +10,9 @@ import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 
 const BusinessTable = (props) => {
-    console.log(props.busTable)
+    // console.log(props.busTable)
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
-    // const [coords, setCoords] = useState([lat="30.2672", long="97.7431"])
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -63,7 +62,6 @@ const BusinessTable = (props) => {
                         page={page}
                         onChangePage={handleChangePage}
                         onChangeRowsPerPage={handleChangeRowsPerPage}
-                        // ActionsComponent={TablePaginationActions}
                         />
                     </TableRow>
                 </TableFooter>

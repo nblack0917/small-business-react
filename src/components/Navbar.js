@@ -8,20 +8,19 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import cookie from 'cookie'
 
+//Logout function to change cookie and redirect to login page
 const logout = () => {
-    // e.preventDefault()
-    
     document.cookie = "null;max-age=1"
-    window.location.replace("/login")
-    
+    window.location.replace("/login") 
 }
 
+// function to check to see if cookie has loggedIn
 const checkAuth = () => {
     const cookies = cookie.parse(document.cookie)
-    // console.log("cookies", cookies)
     return cookies["loggedIn"] ? true : false
 }
 
+// Styles for navbar
 const useStyles = makeStyles((theme) => ({
     root: {
     flexGrow: 1,
@@ -51,17 +50,16 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+// adding style a different way for the links
 const linkStyle = {
     color: "#e6fff2",
     fontWeight: 300,
 }
 
+// NavBar component with two versions depending on login status
 const NavBar = (props) => {
     const [loggedIn, setLoggedIn] =  useState(false);
-    // console.log("props loggedIn:", props.loggedIn)
     const setLogin = () => {
-        // console.log("Logged In: ", loggedIn)
-        // setLoggedIn(false)
         props.updateUserName("")
         props.disableLogin();
         logout();
@@ -77,7 +75,6 @@ const NavBar = (props) => {
     
     const classes = useStyles();
     if(loggedIn === false) {
-        console.log("loggedIn: ", loggedIn)
         return (
             <div className={classes.root}>
             <AppBar position="static" className={classes.appBar}>
@@ -96,7 +93,6 @@ const NavBar = (props) => {
             </div>
         );
     } else if(checkAuth()) {
-        console.log("loggedIn: ", loggedIn)
         return (
             <div className={classes.root}>
                 <AppBar position="static" className={classes.appBar}>

@@ -13,14 +13,12 @@ const Login = (props) => {
     const [hasName, setHasName] = useState(false)
     const [hasPass, setHasPass] = useState(false)
 
-    console.log(props.loggedIn)
+    // console.log(props.loggedIn)
 
     const login = (e) => {
         e.preventDefault()
         document.cookie = "loggedIn=true"
         props.enableLogin();
-        // window.location.replace("/home")
-        // console.log(props.loggedIn)
         history.push('/home')
     }
 

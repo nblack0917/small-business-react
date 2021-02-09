@@ -52,6 +52,7 @@ const coords = (state = { lat: null, lng: null }, action) => {
                 lat: 30.2672,
                 lng: -97.7431
             }
+            return defaultCoords
         default:
             return state;
 
