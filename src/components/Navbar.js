@@ -13,7 +13,7 @@ const history = useHistory();
 const logout = () => {
     document.cookie = "null;max-age=1"
     history.push('/login')
-    }
+    
 }
 
 // function to check to see if cookie has loggedIn
