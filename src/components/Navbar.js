@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-
+import { useHistory } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -9,9 +9,11 @@ import Button from '@material-ui/core/Button';
 import cookie from 'cookie'
 
 //Logout function to change cookie and redirect to login page
+const history = useHistory();
 const logout = () => {
     document.cookie = "null;max-age=1"
-    window.location.replace("/login") 
+    history.push('/login')
+    }
 }
 
 // function to check to see if cookie has loggedIn
@@ -59,6 +61,7 @@ const linkStyle = {
 // NavBar component with two versions depending on login status
 const NavBar = (props) => {
     const [loggedIn, setLoggedIn] =  useState(false);
+    
     const setLogin = () => {
         props.updateUserName("")
         props.disableLogin();
@@ -74,7 +77,7 @@ const NavBar = (props) => {
     })
     
     const classes = useStyles();
-    if(loggedIn === false) {
+    if(!loggedIn) {
         return (
             <div className={classes.root}>
             <AppBar position="static" className={classes.appBar}>
