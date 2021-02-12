@@ -9,12 +9,7 @@ import Button from '@material-ui/core/Button';
 import cookie from 'cookie'
 
 //Logout function to change cookie and redirect to login page
-const history = useHistory();
-const logout = () => {
-    document.cookie = "null;max-age=1"
-    history.push('/login')
-    
-}
+
 
 // function to check to see if cookie has loggedIn
 const checkAuth = () => {
@@ -60,7 +55,14 @@ const linkStyle = {
 
 // NavBar component with two versions depending on login status
 const NavBar = (props) => {
+    const history = useHistory();
     const [loggedIn, setLoggedIn] =  useState(false);
+
+    const logout = () => {
+        document.cookie = "null;max-age=1"
+        history.push('/login')
+        
+    }
     
     const setLogin = () => {
         props.updateUserName("")
